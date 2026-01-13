@@ -24,9 +24,9 @@ Key technical challenges included managing a shared global state across differen
 
 ## ✨ Implemented Features
 
-* **CInteractive Multi-Step Configurator:** A guided 3-phase process (Cap, Body, Bottom) to build a custom bottle.
+* **Interactive Multi-Step Configurator:** A guided 3-phase process (Cap, Body, Bottom) to build a custom bottle.
 * **Real-time Global Preview** A shared `BottlePreview` component that updates instantly as colors are selected.
-* **WDynamic Routing:** Leverages `vue-router` with dynamic segments (`/configurator/:step`) to manage the user journey.
+* **Dynamic Routing:** Leverages `vue-router` with dynamic segments (`/configurator/:step`) to manage the user journey.
 * **Eco-Mission Branding:** Integrated messaging focused on sustainability and recycled marine plastic.
 * **Responsive & Mobile-First:** Fully optimized layout for desktops, tablets, and smartphones.
 * **Global State Management:** Switches between two distinct visual themes.
