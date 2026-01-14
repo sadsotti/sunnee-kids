@@ -25,12 +25,11 @@ Key technical challenges included managing a shared global state across differen
 ## ✨ Implemented Features
 
 * **Interactive Multi-Step Configurator:** A guided 3-phase process (Cap, Body, Bottom) to build a custom bottle.
-* **Real-time Global Preview** A shared `BottlePreview` component that updates instantly as colors are selected.
+* **Real-time Global Preview:** A shared `BottlePreview` component that updates instantly as colors are selected.
 * **Dynamic Routing:** Leverages `vue-router` with dynamic segments (`/configurator/:step`) to manage the user journey.
+* **Global State Management:** Uses a centralized `store.js` with Vue's `reactive` API to maintain consistency across all views.
 * **Eco-Mission Branding:** Integrated messaging focused on sustainability and recycled marine plastic.
 * **Responsive & Mobile-First:** Fully optimized layout for desktops, tablets, and smartphones.
-* **Global State Management:** Switches between two distinct visual themes.
-* **Responsive Design:** Uses a centralized `store.js` with Vue's `reactive` API to maintain consistency across views.
 * **Smooth Transitions:** CSS-based fade and pop animations for a fluid navigation experience.
 * **Summary & Success Modal:** A final recap of the customized product with a celebratory completion trigger.
 
@@ -38,10 +37,10 @@ Key technical challenges included managing a shared global state across differen
 
 ## 🛠️ Technologies Used
 
-* **Vue.js** with **Vue Composition API**
-* **Vue Router** with for SPA navigation management.
+* **Vue.js 3** with **Vue Composition API**
+* **Vue Router** for SPA navigation management.
 * **Vite** as the lightning-fast build tool and development server.
-* **CSS3 & Scoped Styles** Utilizes Flexbox, Grid, and custom animations.
+* **CSS3 & Scoped Styles:** Utilizes Flexbox, Grid, and custom animations.
 * **Google Fonts:** Playful and bold typography to match the "Kids" brand identity.
 
 ---
@@ -51,46 +50,33 @@ Key technical challenges included managing a shared global state across differen
 Follow these steps to clone the repository and run the project:
 
 1.  **Clone the repository:**
-
     ```bash
-    git clone https://github.com/tuo-username/sunnee-kids.git
+    git clone https://github.com/sadsotti/sunnee-kids.git
     ```
 
 2.  **Navigate to the project directory:**
-
     ```bash
     cd sunnee-kids
     ```
 
 3.  **Install dependencies:**
-
     ```bash
     npm install
     ```
 
-4.  **Start the development server (using Vite):**
-
+4.  **Start the development server:**
     ```bash
     npm run dev
     ```
 
-    You will see the local access URL (e.g., `http://localhost:5173/`) in the console.
-
-5.  **(Optional) Create the production build (using Vite):**
-
-    To generate optimized files for production (bundle, compiled CSS, assets), run:
-
+5.  **Create the production build:**
     ```bash
     npm run build
     ```
 
-    Compiled files will be saved in the `dist/` directory, ready for deployment.
-
 ---
 
 ## 📂 Project Structure
-
-The project follows a standard Vite/Vue structure for better maintainability:
 
 * `dist/`: Output folder for the optimized production build.
 * `public/`: Static assets (favicon, logo).
@@ -109,7 +95,7 @@ The project follows a standard Vite/Vue structure for better maintainability:
 
 ### ✨ Implemented Solution (Architecture)
 
-The original monolithic component (`Game.vue`) was refactored into a clear component hierarchy to ensure **Separation of Concerns**:
+The project follows a modular architecture designed for **scalability** and **state consistency**:
 
 1.  **Reactive Store:** Instead of prop-drilling, the bottle's color state is stored in a standalone `store.js`. This allows the `BottlePreview` component to remain "synced" whether it's on the Home, Configurator, or Success page.
 2.  **Dynamic Configurator:** A single `ConfiguratorView` adapts its content (labels and targets) based on the `:step` parameter in the URL, reducing code duplication.
